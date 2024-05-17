@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking</title>
+    <style>
+    body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Change the URL to the location of your background image */
+    background-image: url("cab.jpg"); 
+    background-size: cover;
+    background-position: right -10% center; /* Adjusted background-position */
+    background-repeat: no-repeat;
+    color: #9e3232;
+}
+
+
+
+/* Adjust background-size property to zoom out */
+body {
+    background-size: 80%; /* You can adjust the percentage as needed */
+}
+
+    
+        header, nav, footer {
+            background-color: #4d4a4a;
+            color: #f3f3f4;
+            padding: 15px;
+            text-align: center;
+        }
+    
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    
+        .booking-container {
+            max-width: 500px;
+            /* Adjust margin to move the container to the left */
+            margin: 20px auto;
+            margin-left: 20px; /* Added this line */
+            padding: 20px;
+            background-color: #8f87ee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    
+        h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+    
+        form {
+            display: grid;
+            gap: 20px;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+    
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #366a8d;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+    
+        input:focus,
+        select:focus {
+            border-color: #2a658d;
+            background-color: #fff;
+        }
+    
+        fieldset {
+            border: 1px solid #050606;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    
+        legend {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+    
+        button {
+            background-color: #181c1f;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #2980b9;
+        }
+    
+        footer {
+            background-color: #4a4040;
+            color: #eceef6;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <header>
+        <h1>CAB BOOKING</h1>
+    </header>
+
+    <nav>
+        <a href="about.html">About</a>
+        <a href="#" onclick="showContact()">Contact</a>
+        <div id="contactInfo" style="display: none;">
+            <p>📧 Email: paranitharan48@gmail.com</p>
+            <p>☎ Phone: 6379506945</p>
+        </div>
+        <a href="feedback.php" >Feedback</a>
+        <a href="cancel.php">Cancel Booking</a>
+        <a href="admin.html">Admin</a>
+    </nav>
+
+    <div class="booking-container">
+        
+            <form method="post" action="fetch.php">
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="">Select a destination</option>
+                    <option value="Thiruvarur">Thiruvarur</option>
+                    <option value="Thanjavur">Thanjavur</option>
+                    <option value="Kumbakonam">Kumbakonam</option>
+                </select>
+                
+                <label for="seat_capacity">Seat Capacity:</label>
+                <select id="seat_capacity" name="seat_capacity" required>
+                    <option value="">Select seat capacity</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                
+        
+                <fieldset>
+                    <legend>Driver Gender:</legend>
+                    <label for="driver_gender">Select Gender:</label>
+                    <select id="driver_gender" name="driver_gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </fieldset>
+                  
+            
+
+            <button type="submit">FILTER</button>
+        
+    </form>
+    </div>
+
+    <footer>
+        <p>All rights reserved</p>
+    </footer>
+
+    <script>
+        function showContact() {
+            var contactInfo = document.getElementById("contactInfo");
+            if (contactInfo.style.display === "none") {
+                contactInfo.style.display = "block";
+            } else {
+                contactInfo.style.display = "none";
+            }
+        }
+
+        function showFeedbackDialog() {
+            var feedbackText = window.prompt("Please provide your feedback:");
+            if (feedbackText !== null) {
+                // User clicked OK
+                alert("Feedback submitted: " + feedbackText);
+            } else {
+                // User clicked Cancel
+                alert("Feedback submission canceled.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

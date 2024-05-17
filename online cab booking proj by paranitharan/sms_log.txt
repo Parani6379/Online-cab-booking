@@ -1,0 +1,5 @@
+{"return":true,"request_id":"cie0sv9j1bm3ptq","message":["SMS sent successfully."]}
+{"return":true,"request_id":"0z2a9mcogid5wfh","message":["SMS sent successfully."]}
+{"return":true,"request_id":"7wn5mtqbfxyj3gk","message":["SMS sent successfully."]}
+{"return":true,"request_id":"0oisgf8vk6uwmht","message":["SMS sent successfully."]}
+{"return":true,"request_id":"w7z9puif2sx5jta","message":["SMS sent successfully."]}
